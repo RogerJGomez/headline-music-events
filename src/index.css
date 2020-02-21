@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color:#616161;
+  background:#00af9a
+} 
+
+h1,h2,h3,h4,p,a, label, button, input{
+  font-family: 'Poppins', sans-serif !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
+.flex-box #search{
+  font-weight: bold;
+}
 
 #title{
   text-align: center;
@@ -19,60 +21,96 @@ code {
 }
 #title img{
   width: 250px;
+  height: 250px;
   border-radius: 50%;
+  border: 4px solid #00af9a;
 }
 
-.flex-box{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+
+#slitPath1 {
+  fill: #7118d7;
+  stroke: #7118d7;
+  stroke-width: 0;
 }
 
-.flex-item{
-  padding: 20px;
+#slitPath2,
+#slitPath3 {
+  fill: #7118d7;
 }
 
+.container-events{
+  border: 2px solid grey;
+}
+
+
+.mdl-button{
+  background:#00af9a !important
+}
+
+#textfield-Typethenameoftheartist{
+  border-bottom: 2px solid #00af9a;
+}
+
+.mdl-textfield__label{
+  color: white !important;
+}
 
 /** SPINNER **/
 
 .spinner{
+    margin-top: 25vh;
+    text-align: center;
+}
+
+
+.mdl-spinner__layer-1,  .mdl-spinner__layer-2,  .mdl-spinner__layer-3, .mdl-spinner__layer-4 {
+  border-color:#7118d7 !important
+}
+/** SPINNER **/
+
+.flex-box{
   display: flex;
+  flex-wrap:wrap;
   justify-content: center;
   align-items: center;
 }
 
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
+.event{
+  min-height: 350px;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25); 
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25);
+  border-radius: 10px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  background: #7118d7;
+  color: white;
 }
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+.event h3{
+  font-size: 26px;
+  font-weight: bold;
 }
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
+
+.event h4{
+  font-size: 22px;
 }
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
+.event a{
+  width: 50%;
+  margin: 0 auto;
 }
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
+
+@media(max-width:480px){
+
+  .event{
+    width: 280px !important;
+    margin:0 auto;
   }
-  100% {
-    transform: rotate(360deg);
+
+  #logo2{
+    display: none;
   }
+
 }

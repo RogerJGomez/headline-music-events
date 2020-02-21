@@ -1,11 +1,23 @@
 import React from 'react'
+import {Cell} from 'react-mdl'
+import Fade from 'react-reveal/Fade'
 
 export default function Event({event}) {
-    return (
-        <div className="flex-item">
-            <h3>{event.venue.name}</h3>
-            <h3>Ciudad: {event.venue.city} - {event.venue.country}</h3>
-            <h3>Fecha: {event.datetime}</h3>
-        </div>
-    )
+
+       const FormatDate = () =>{
+          const date = new Date(event.datetime).toDateString()
+          return(date)
+       }
+        return (
+            <Cell col={4}>
+                <Fade right>
+                <div className="event">
+                    <h3>{event.venue.name}</h3>
+                    <h4>{event.venue.city} - {event.venue.country}</h4>
+                    <h4>{FormatDate()}</h4>
+                    <a href={event.url} target="_blank" rel="noopener noreferrer" className="mdl-button mdl-js-button mdl-button mdl-button--raised mdl-button--colored">Tickets <i className="fa fa-ticket" /></a>
+                </div>
+                </Fade>
+            </Cell>
+        )
 }
