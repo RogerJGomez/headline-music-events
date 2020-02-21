@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Artist from './components/Artist'
-import {Button, Textfield, Grid, Cell} from 'react-mdl'
+import {Button, Textfield, Grid, Cell, Header, Navigation} from 'react-mdl'
 import Fade from 'react-reveal/Fade'
 
 export default class App extends Component {
@@ -15,8 +15,8 @@ export default class App extends Component {
 
   componentDidMount(){
 
-    let event = "https://rest.bandsintown.com/artists/Two%20Door%20Cinema%20Club/events?app_id=510"
-    let artist = "https://rest.bandsintown.com/artists/Two%20Door%20Cinema%20Club?app_id=510"
+    let event = "https://rest.bandsintown.com/artists/The%20Kooks/events?app_id=510"
+    let artist = "https://rest.bandsintown.com/artists/The%20Kooks?app_id=510"
     const requestOne = axios.get(event);
     const requestTwo = axios.get(artist); 
 
@@ -79,7 +79,11 @@ export default class App extends Component {
 
       return (
         <div className="App">
-
+        <Header title="Search an Artist" style={{color: 'white', background:'#272727', boxShadow:'0 2px 10px rgba(0, 0, 0, 0.40)'}}>
+            <Navigation >
+                <a href="/#" style={{lineHeight:0}}><i className="fa fa-github nav-icon"/></a>
+            </Navigation>
+        </Header>
           <form onSubmit = {this.onSubmit}>
           <Grid style={{background:'#7118d7', color:'white', paddingTop:'15vh'}}>
             
@@ -89,7 +93,7 @@ export default class App extends Component {
               </Fade>
             </Cell>
 
-            <Cell col={4} style={{textAlign:'center'}} >
+            <Cell col={4} style={{textAlign:'center'}} id="search-form-">
               <div className="flex-box">
                 <h3 id="search">Search an Artist</h3>
                 <Textfield

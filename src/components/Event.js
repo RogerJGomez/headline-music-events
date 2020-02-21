@@ -15,7 +15,7 @@ export default function Event({event}) {
                     <h3>{event.venue.name}</h3>
                     <h4>{event.venue.city} - {event.venue.country}</h4>
                     <h4>{FormatDate()}</h4>
-                    <a href={event.url} target="_blank" rel="noopener noreferrer" className="mdl-button mdl-js-button mdl-button mdl-button--raised mdl-button--colored">Tickets <i className="fa fa-ticket" /></a>
+                    <a href={event.url} target="_blank" rel="noopener noreferrer" className="mdl-button mdl-js-button mdl-button mdl-button--raised mdl-button--colored">Tickets <i className="fa fa-ticket" style={{color: '#F3B904'}}/></a>
                 </div>
                 </Fade>
             </Cell>
