@@ -120,10 +120,7 @@ h1,h2,h3,h4,p,a, label, button, input,span{
 
 @media(max-width:480px){
 
-  .event{
-    width: 280px !important;
-    margin:0 auto;
-  }
+
 
   #logo2{
     display: none;

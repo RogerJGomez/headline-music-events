@@ -1,6 +1,6 @@
 import React from 'react'
-import {Cell} from 'react-mdl'
-import Fade from 'react-reveal/Fade'
+import { Cell } from 'react-mdl'
+import { Fade } from 'react-reveal'
 
 export default function Event({event}) {
 
