@@ -149,12 +149,11 @@ export default class App extends Component {
               
               <Cell col={4} style={iconStyle}>
                 <Fade left>
-                  <img className="icon" src="/casete.png" alt="left" height="150px"/>
+                  <img className="music-icon" src="/left-icon.svg" alt="left"/>
                 </Fade>
               </Cell>
 
               <Cell col={4} style={{textAlign:'center'}} id="search-form-">
-                <img src="/sing.png" alt="mic" height="150px"/>
                 <div className="flex-box">
                   <h3 id="search">Search an Artist</h3>
                     <Textfield
@@ -168,7 +167,7 @@ export default class App extends Component {
 
               <Cell col={4} style={iconStyle}>
                   <Fade right>
-                    <img className="icon" src="/casete.png" alt="right" height="150px"/>
+                    <img className="icon music-icon" src="/right-icon.svg" alt="right"/>
                   </Fade>
               </Cell>
 

@@ -119,6 +119,10 @@ h1,h2,h3,h4,p,a, label, button, input,span{
   color: #00af9a
 }
 
+.music-icon{
+    height: 15vh;
+}
+
 
 @media(max-width:480px){
 
