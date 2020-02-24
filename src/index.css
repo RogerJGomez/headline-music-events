@@ -47,7 +47,7 @@ h1,h2,h3,h4,p,a, label, button, input,span{
   background:#00af9a !important
 }
 
-#textfield-Typethenameoftheartist{
+#textfield-Searchbyname{
   border-bottom: 2px solid #00af9a;
 }
 
@@ -58,14 +58,16 @@ h1,h2,h3,h4,p,a, label, button, input,span{
 /** SPINNER **/
 
 .spinner{
-    margin-top: 25vh;
+    padding-top: 10vh;
     text-align: center;
+    background: #7118d7;
 }
 
 
 .mdl-spinner__layer-1,  .mdl-spinner__layer-2,  .mdl-spinner__layer-3, .mdl-spinner__layer-4 {
-  border-color:#7118d7 !important
+  border-color:#00af9a !important
 }
+
 /** SPINNER **/
 
 .flex-box{
@@ -120,11 +122,31 @@ h1,h2,h3,h4,p,a, label, button, input,span{
 
 @media(max-width:480px){
 
-
-
-  #logo2{
+  .icon{
     display: none;
+  }
+  .event a{
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media(max-width:1024px){
+
+  .mdl-layout__header-row{
+    display: flex;
+    justify-content: center;
+    padding:10px !important;
+    height: 64px !important
   }
 
 }
 
+
+@media(min-width:320px){
+
+    .mdl-layout__header{
+      display: flex !important
+    }
+
+}

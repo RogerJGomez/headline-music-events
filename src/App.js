@@ -5,14 +5,24 @@ import { Button, Textfield, Grid, Cell, Header, Navigation } from 'react-mdl'
 import { Fade } from 'react-reveal'
 import { Lines } from 'react-preloaders'
 
+
+const iconStyle = {display:'flex', alignItems:'center', justifyContent:'center'}
+
+
 export default class App extends Component {
 
       state = {
+
         events:[],
+
         artist:{},
+
         loading:true,
+
         error:false,
+
         preloader:true
+
       }
 
   componentDidMount(){
@@ -45,7 +55,9 @@ export default class App extends Component {
       
     }))
     .catch(errors => {
+
       console.log(errors)
+
         this.setState({
 
           loading:false,
@@ -53,10 +65,12 @@ export default class App extends Component {
           preloader:false
           
       })
+
     })
+
   }
 
-  onSubmit = (e) =>{
+  onSubmit = e =>{
 
     this.setState({
 
@@ -104,10 +118,13 @@ export default class App extends Component {
               loading:false
 
           })
+
           console.log(errors)
+
       })
 
-      e.target[0].value=''
+      e.target[0].value = ''
+      
   }
 
 
@@ -117,8 +134,8 @@ export default class App extends Component {
       return (
       <>
         <div className="App">
-          
-          <Header title="Search an Artist" style={{color: 'white', background:'#272727', boxShadow:'0 2px 10px rgba(0, 0, 0, 0.40)'}}>
+
+          <Header title="Headline Music Events" style={{color: 'white', background:'#272727'}}>
 
               <Navigation >
                   <a href="https://github.com/rogerjgomez" style={{lineHeight:0}}><i className="fa fa-github nav-icon"/></a>
@@ -128,28 +145,30 @@ export default class App extends Component {
 
           <form onSubmit = {this.onSubmit}>
 
-            <Grid style={{background:'#7118d7', color:'white', paddingTop:'15vh'}}>
+            <Grid style={{background:'#7118d7', color:'white', paddingTop:'5vh'}}>
               
-              <Cell col={4} style={{textAlign:'center'}}>
+              <Cell col={4} style={iconStyle}>
                 <Fade left>
-                <img src="/casete.png" alt="casete" height="150px"/>
+                  <img className="icon" src="/casete.png" alt="left" height="150px"/>
                 </Fade>
               </Cell>
 
               <Cell col={4} style={{textAlign:'center'}} id="search-form-">
+                <img src="/sing.png" alt="mic" height="150px"/>
                 <div className="flex-box">
                   <h3 id="search">Search an Artist</h3>
                     <Textfield
-                        label="Type the name of the artist"
+                        label="Search by name"
                         style={{width: '400px'}}
+                        floatingLabel
                     />
                     <Button style={{margin:'10px'}}raised colored>Search <i className="fa fa-search" /></Button>
                 </div>
               </Cell>
 
-              <Cell col={4} style={{textAlign:'center'}}>
+              <Cell col={4} style={iconStyle}>
                   <Fade right>
-                  <img id="logo2" src="/casete.png" alt="casete" height="150px"/>
+                    <img className="icon" src="/casete.png" alt="right" height="150px"/>
                   </Fade>
               </Cell>
 
