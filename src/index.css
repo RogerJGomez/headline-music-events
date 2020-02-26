@@ -120,14 +120,10 @@ h1,h2,h3,h4,p,a, label, button, input,span{
   color: #00af9a
 }
 
-.music-icon{
-    height: 15vh;
-}
-
 
 @media(max-width:480px){
 
-  .icon{
+  #right-logo{
     display: none;
   }
   .event a{
@@ -158,4 +154,31 @@ h1,h2,h3,h4,p,a, label, button, input,span{
       display: flex !important
     }
 
+}
+
+
+#radio{
+  animation: radio 0.7s  ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+#alien{
+  animation: alien 1.9s  infinite;
+  transform-origin: center;
+}
+
+@keyframes radio{
+  from{
+      transform: rotateZ(-7deg);
+  }
+  to{
+      transform: rotateZ(7deg);
+  }
+}
+
+
+@keyframes alien{
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-7%); }
+  100% { transform: translateY(0); }
 }

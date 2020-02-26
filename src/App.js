@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Artist from './components/Artist'
 import { Button, Textfield, Grid, Cell, Header, Navigation } from 'react-mdl'
-import { Fade } from 'react-reveal'
 import { Lines } from 'react-preloaders'
-
+import LeftLogo from './components/LeftLogo'
+import RightLogo from './components/RightLogo'
 
 const iconStyle = {display:'flex', alignItems:'center', justifyContent:'center'}
 
@@ -14,13 +14,9 @@ export default class App extends Component {
       state = {
 
         events:[],
-
         artist:{},
-
         loading:true,
-
         error:false,
-
         preloader:true
 
       }
@@ -28,27 +24,21 @@ export default class App extends Component {
   componentDidMount(){
 
     let event = "https://rest.bandsintown.com/artists/The%20Kooks/events?app_id=510"
-
     let artist = "https://rest.bandsintown.com/artists/The%20Kooks?app_id=510"
 
     const requestOne = axios.get(event);
-
     const requestTwo = axios.get(artist); 
 
     axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
 
       const responseOne = responses[0]
-
       const responseTwo = responses[1]   
 
       this.setState({
 
           events:responseOne.data,
-
           artist:responseTwo.data,
-
           loading:false,
-
           preloader:false
 
       })
@@ -59,11 +49,8 @@ export default class App extends Component {
       console.log(errors)
 
         this.setState({
-
           loading:false,
-
           preloader:false
-          
       })
 
     })
@@ -73,50 +60,35 @@ export default class App extends Component {
   onSubmit = e =>{
 
     this.setState({
-
       loading:true
-
     })
 
     e.preventDefault()
 
-     let inputBand = e.target[0].value
-
+      let inputBand = e.target[0].value
       let event = `https://rest.bandsintown.com/artists/${inputBand}/events?app_id=510`
-
       let artist = `https://rest.bandsintown.com/artists/${inputBand}?app_id=510`
-
       const requestOne = axios.get(event);
-
       const requestTwo = axios.get(artist); 
-  
+
       axios.all([requestOne, requestTwo]).then(axios.spread((...responses) => {
         
         const responseOne = responses[0]
-
         const responseTwo = responses[1]
 
         this.setState({
-
           events:responseOne.data,
-
           artist:responseTwo.data,
-          
           loading:false,
-
           error:false
-
         })
         
       }))
       .catch(errors => {
 
           this.setState({
-
               error:true,
-
               loading:false
-
           })
 
           console.log(errors)
@@ -148,9 +120,7 @@ export default class App extends Component {
             <Grid style={{background:'#7118d7', color:'white', paddingTop:'5vh'}}>
               
               <Cell col={4} style={iconStyle}>
-                <Fade left>
-                  <img className="music-icon" src="/left-icon.svg" alt="left"/>
-                </Fade>
+                  <LeftLogo />
               </Cell>
 
               <Cell col={4} style={{textAlign:'center'}} id="search-form-">
@@ -166,9 +136,7 @@ export default class App extends Component {
               </Cell>
 
               <Cell col={4} style={iconStyle}>
-                  <Fade right>
-                    <img className="icon music-icon" src="/right-icon.svg" alt="right"/>
-                  </Fade>
+                  <RightLogo />
               </Cell>
 
             </Grid>
