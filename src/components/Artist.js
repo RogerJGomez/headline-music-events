@@ -50,7 +50,7 @@ export default function Artist({events, artist, loading, error}) {
 
                     <Cell col={12}>
                         <div id="title">
-                            <img src={artist.image_url} alt="artist"/>
+                            <img  draggable="false" src={artist.image_url} alt="artist"/>
                             <h3>Upcoming events of: <strong>{artist.name}</strong></h3>
                         </div>
                     </Cell>
