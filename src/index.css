@@ -6,12 +6,15 @@ body {
   background:#00af9a
 } 
 
-h1,h2,h3,h4,p,a, label, button, input,span{
+h1,h2,h3,h4,p,a, label, button, input,span {
   font-family: 'Poppins', sans-serif !important;
 }
 
+.mdl-layout__header {
+  display: flex !important
+}
 
-.flex-box #search{
+.flex-box #search {
   font-weight: bold;
 }
 
@@ -21,31 +24,30 @@ h1,h2,h3,h4,p,a, label, button, input,span{
   stroke-width: 0;
 }
 
-#slitPath2,
-#slitPath3 {
+#slitPath2,#slitPath3 {
   fill: #7118d7;
 }
 
-.container-events{
+.container-events {
   border: 2px solid grey;
 }
 
 
-.mdl-button{
+.mdl-button {
   background:#00af9a !important
 }
 
-#textfield-Searchbyname{
+#textfield-Searchbyname {
   border-bottom: 2px solid #00af9a;
 }
 
-.mdl-textfield__label{
+.mdl-textfield__label {
   color: white !important;
 }
 
 /** SPINNER **/
 
-.spinner{
+.spinner {
     padding-top: 10vh;
     text-align: center;
     background: #7118d7;
@@ -58,30 +60,30 @@ h1,h2,h3,h4,p,a, label, button, input,span{
 
 /** SPINNER **/
 
-.flex-box{
+.flex-box {
   display: flex;
   flex-wrap:wrap;
   justify-content: center;
   align-items: center;
 }
 
-.mdl-layout__header-row{
+.mdl-layout__header-row {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px !important;
 }
 
-#title{
+#title {
   text-align: center;
   margin: 3vh;
 }
-#title img{
+
+#title img {
   width: 30vh;
   height: 30vh;
   border-radius: 50%;
   border: 6px solid #00af9a;
 }
 
-
-.event{
+.event {
   min-height: 350px;
   width: 20vw;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.25); 
@@ -98,49 +100,50 @@ h1,h2,h3,h4,p,a, label, button, input,span{
   border:15px dashed #00af9a;
   padding: 20px;
 }
-.event h3{
+
+.event h3 {
   font-size: 26px;
   font-weight: bold;
 }
 
-.event h4{
+.event h4 {
   font-size: 22px;
 }
-.event a{
+.event a {
   width: 50%;
   margin: 0 auto;
 }
 
-.nav-icon{
+.nav-icon {
   font-size: 30px;
   color: #fff
 }
 
-.nav-icon:hover{
+.nav-icon:hover {
   color: #00af9a
 }
 
 
-@media(max-width:480px){
+@media (max-width:480px) {
 
-  #right-logo{
+  #right-logo {
     display: none;
   }
-  .event a{
+  .event a {
     width: 70%;
     margin: 0 auto;
   }
 }
 
-@media(max-width:1024px){
+@media (max-width:1024px) {
 
-  .mdl-layout__header-row{
+  .mdl-layout__header-row {
     display: flex;
     justify-content: center;
     padding:10px !important;
     height: 64px !important
   }
-  .event{
+  .event {
     width: 75% !important;
     margin: 2vh auto!important;
     justify-content: center !important;
@@ -148,26 +151,17 @@ h1,h2,h3,h4,p,a, label, button, input,span{
 }
 
 
-@media(min-width:320px){
-
-    .mdl-layout__header{
-      display: flex !important
-    }
-
-}
-
-
-#radio{
+#radio {
   animation: radio 0.7s  ease-in-out infinite alternate;
   transform-origin: center;
 }
 
-#alien{
+#alien {
   animation: alien 1.9s  infinite;
   transform-origin: center;
 }
 
-@keyframes radio{
+@keyframes radio {
   from{
       transform: rotateZ(-7deg);
   }
@@ -177,7 +171,7 @@ h1,h2,h3,h4,p,a, label, button, input,span{
 }
 
 
-@keyframes alien{
+@keyframes alien {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-7%); }
   100% { transform: translateY(0); }

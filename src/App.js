@@ -12,17 +12,14 @@ const iconStyle = {display:'flex', alignItems:'center', justifyContent:'center'}
 export default class App extends Component {
 
       state = {
-
         events:[],
         artist:{},
         loading:true,
         error:false,
         preloader:true
-
       }
 
   componentDidMount(){
-
     let event = "https://rest.bandsintown.com/artists/The%20Kooks/events?app_id=510"
     let artist = "https://rest.bandsintown.com/artists/The%20Kooks?app_id=510"
 
@@ -35,30 +32,24 @@ export default class App extends Component {
       const responseTwo = responses[1]   
 
       this.setState({
-
           events:responseOne.data,
           artist:responseTwo.data,
           loading:false,
           preloader:false
-
       })
       
     }))
     .catch(errors => {
 
       console.log(errors)
-
         this.setState({
           loading:false,
           preloader:false
       })
-
     })
-
   }
 
   onSubmit = e =>{
-
     this.setState({
       loading:true
     })
@@ -85,40 +76,30 @@ export default class App extends Component {
         
       }))
       .catch(errors => {
-
           this.setState({
               error:true,
               loading:false
           })
-
           console.log(errors)
-
       })
 
       e.target[0].value = ''
-      
   }
 
 
 
   render() {
-
       return (
       <>
         <div className="App">
-
           <Header title="Headline Music Events" style={{color: 'white', background:'#272727'}}>
-
-              <Navigation >
+              <Navigation>
                   <a href="https://github.com/rogerjgomez" style={{lineHeight:0}}><i className="fa fa-github nav-icon"/></a>
               </Navigation>
-
           </Header>
 
           <form onSubmit = {this.onSubmit}>
-
             <Grid style={{background:'#7118d7', color:'white', paddingTop:'5vh'}}>
-              
               <Cell col={4} style={iconStyle}>
                   <LeftLogo />
               </Cell>
@@ -138,17 +119,11 @@ export default class App extends Component {
               <Cell col={4} style={iconStyle}>
                   <RightLogo />
               </Cell>
-
             </Grid>
-          
           </form>
-
           <Artist events={this.state.events} artist={this.state.artist} error={this.state.error} loading={this.state.loading}/>
-
         </div>
-
         <Lines customLoading={this.state.preloader} background="#00af9a" color={'#7118d7'}/>
-
       </>  
       )
 
