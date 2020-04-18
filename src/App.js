@@ -43,7 +43,7 @@ export default function App() {
 
   function onSubmit (e){
     e.preventDefault()
-
+      setError(false)
       setLoading(true)
       let artistName = e.target[0].value
       let event = `https://rest.bandsintown.com/artists/${artistName}/events?app_id=510`
