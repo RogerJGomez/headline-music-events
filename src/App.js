@@ -9,7 +9,6 @@ import RightLogo from './components/RightLogo'
 const iconStyle = {display:'flex', alignItems:'center', justifyContent:'center'}
 
 export default function App() {
-
   const [artist, setArtist] = useState({})
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
@@ -76,13 +75,11 @@ export default function App() {
               <a href="https://github.com/rogerjgomez" style={{lineHeight:0}}><i className="fa fa-github nav-icon"/></a>
           </Navigation>
       </Header>
-
       <form onSubmit = {onSubmit}>
         <Grid style={{background:'#7118d7', color:'white', paddingTop:'5vh'}}>
           <Cell col={4} style={iconStyle}>
               <LeftLogo />
           </Cell>
-
           <Cell col={4} style={{textAlign:'center'}} id="search-form-">
             <div className="flex-box">
               <h3 id="search">Search an Artist</h3>
@@ -94,7 +91,6 @@ export default function App() {
                 <Button style={{margin:'10px'}}raised colored>Search <i className="fa fa-search" /></Button>
             </div>
           </Cell>
-
           <Cell col={4} style={iconStyle}>
               <RightLogo />
           </Cell>

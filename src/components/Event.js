@@ -3,12 +3,10 @@ import { Cell } from 'react-mdl'
 import { Fade } from 'react-reveal'
 
 export default function Event({event}) {
-
        const FormatDate = () => {
           const date = new Date(event.datetime).toDateString()
           return(date)
        }
-
         return ( 
             <Cell col={4}>
                 <Fade right>

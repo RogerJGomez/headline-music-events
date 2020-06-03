@@ -4,9 +4,8 @@ import {Spinner, Grid, Cell} from 'react-mdl'
 import Border from './Border'
 
 export default function Artist({events, artist, loading, error}) {
-
+    
     if(loading){
-
         return(        
             <>
                 <div className="spinner" >
@@ -17,7 +16,6 @@ export default function Artist({events, artist, loading, error}) {
         ) 
     }
     else if(error){
-
         return(
             <>   
                 <Grid style={{background:'#7118d7', color:'white'}}>
@@ -30,7 +28,6 @@ export default function Artist({events, artist, loading, error}) {
                 <Border />
             </>
         )
-
     }
     else if(events.length>0){
         return(
