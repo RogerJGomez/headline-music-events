@@ -13,6 +13,7 @@ const iconStyle = {
 };
 
 export default function App() {
+  const [name, setName] = useState("");
   const [artist, setArtist] = useState({});
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,8 +22,9 @@ export default function App() {
 
   useEffect(() => {
     let event =
-      "https://rest.bandsintown.com/artists/The%20Kooks/events?app_id=510";
-    let artist = "https://rest.bandsintown.com/artists/The%20Kooks?app_id=510";
+      "https://rest.bandsintown.com/artists/Two%20Door%20Cinema%20Club/events?app_id=510";
+    let artist =
+      "https://rest.bandsintown.com/artists/Two%20Door%20Cinema%20Club?app_id=510";
     const requestOne = axios.get(event);
     const requestTwo = axios.get(artist);
 
@@ -51,9 +53,8 @@ export default function App() {
     e.preventDefault();
     setError(false);
     setLoading(true);
-    let artistName = e.target[0].value;
-    let event = `https://rest.bandsintown.com/artists/${artistName}/events?app_id=510`;
-    let artist = `https://rest.bandsintown.com/artists/${artistName}?app_id=510`;
+    let event = `https://rest.bandsintown.com/artists/${name}/events?app_id=510`;
+    let artist = `https://rest.bandsintown.com/artists/${name}?app_id=510`;
     const requestOne = axios.get(event);
     const requestTwo = axios.get(artist);
 
@@ -74,8 +75,7 @@ export default function App() {
         setLoading(false);
         setError(true);
       });
-
-    e.target[0].value = "";
+    setName("");
   }
 
   return (
@@ -105,6 +105,8 @@ export default function App() {
                   label="Search by name"
                   style={{ width: "400px" }}
                   floatingLabel
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
                 <Button style={{ margin: "10px" }} raised colored>
                   Search <i className="fa fa-search" />
