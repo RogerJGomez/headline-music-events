@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 
+:root {
+  --green: #00af9a;
+  --violet: #7118d7
+}
+
 body {
   margin: 0;
-  color: #616161;
-  background: #00af9a;
+  color: #fff;
+  background: var(--green);
 }
 
 h1,
@@ -28,26 +33,22 @@ span {
 }
 
 #slitPath1 {
-  fill: #7118d7;
-  stroke: #7118d7;
+  fill: var(--violet);
+  stroke: var(--violet);
   stroke-width: 0;
 }
 
 #slitPath2,
 #slitPath3 {
-  fill: #7118d7;
-}
-
-.container-events {
-  border: 2px solid grey;
+  fill: var(--violet);
 }
 
 .mdl-button {
-  background: #00af9a !important;
+  background: var(--green) !important;
 }
 
 #textfield-Searchbyname {
-  border-bottom: 2px solid #00af9a;
+  border-bottom: 2px solid var(--green);
 }
 
 .mdl-textfield__label {
@@ -59,14 +60,14 @@ span {
 .spinner {
   padding-top: 10vh;
   text-align: center;
-  background: #7118d7;
+  background: var(--violet);
 }
 
 .mdl-spinner__layer-1,
 .mdl-spinner__layer-2,
 .mdl-spinner__layer-3,
 .mdl-spinner__layer-4 {
-  border-color: #00af9a !important;
+  border-color: var(--green) !important;
 }
 
 /** SPINNER **/
@@ -91,26 +92,29 @@ span {
   width: 30vh;
   height: 30vh;
   border-radius: 50%;
-  border: 6px solid #00af9a;
+  border: 6px solid var(--green);
 }
 
 .event {
   min-height: 350px;
-  width: 20vw;
   -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15),
     0 6px 6px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 6px 6px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   display: flex;
   text-align: center;
+  margin: 2%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5vh;
-  background: #7118d7;
-  color: white;
-  border: 15px dashed #00af9a;
+  background: var(--violet);
+  border: 15px dashed var(--green);
   padding: 20px;
+}
+
+.no-events {
+  width:50%;
+  margin: 10vh auto;
 }
 
 .event h3 {
@@ -129,10 +133,11 @@ span {
 .nav-icon {
   font-size: 30px;
   color: #fff;
+  transition: 0.25s;
 }
 
 .nav-icon:hover {
-  color: #00af9a;
+  color: var(--violet);
 }
 
 @media (max-width: 480px) {
