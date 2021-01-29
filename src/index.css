@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 :root {
   --green: #00af9a;
-  --violet: #7118d7
+  --violet: #7118d7;
 }
 
 body {
   margin: 0;
-  color: #fff;
+  color: #c3c3c3;
   background: var(--green);
 }
 
@@ -21,7 +21,7 @@ label,
 button,
 input,
 span {
-  font-family: "Poppins", sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .mdl-layout__header {
@@ -113,7 +113,7 @@ span {
 }
 
 .no-events {
-  width:50%;
+  width: 50%;
   margin: 10vh auto;
 }
 
